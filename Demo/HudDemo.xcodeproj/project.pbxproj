@@ -10,6 +10,7 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		5BE141EE1CD8C33D0023BC9E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BE141ED1CD8C33D0023BC9E /* QuartzCore.framework */; };
+		B12CE41C1D9228A700DF2B8A /* UIImageView+MBCustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = B12CE41B1D9228A700DF2B8A /* UIImageView+MBCustomView.m */; };
 		D22F7D810F85241C00550BB3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D22F7D800F85241C00550BB3 /* MBProgressHUD.m */; };
 		D274948B1D3B74AA00ABEB66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D274948A1D3B74AA00ABEB66 /* Images.xcassets */; };
 		D27F18451D3B5878009D7482 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D27F18441D3B5878009D7482 /* main.m */; };
@@ -42,6 +43,8 @@
 		1D6058910D05DD3D006BFB54 /* HudDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HudDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		5BE141ED1CD8C33D0023BC9E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B12CE41A1D9228A700DF2B8A /* UIImageView+MBCustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+MBCustomView.h"; path = "HudDemo/UIImageView+MBCustomView.h"; sourceTree = SOURCE_ROOT; };
+		B12CE41B1D9228A700DF2B8A /* UIImageView+MBCustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+MBCustomView.m"; path = "HudDemo/UIImageView+MBCustomView.m"; sourceTree = SOURCE_ROOT; };
 		D22F7D7F0F85241C00550BB3 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ../MBProgressHUD.h; sourceTree = SOURCE_ROOT; };
 		D22F7D800F85241C00550BB3 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ../MBProgressHUD.m; sourceTree = "<group>"; };
 		D274948A1D3B74AA00ABEB66 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -102,9 +105,11 @@
 			isa = PBXGroup;
 			children = (
 				D27F18561D3B5DFF009D7482 /* MBHudDemoAppDelegate.h */,
-				D27F18571D3B5DFF009D7482 /* MBHudDemoViewController.h */,
 				D27F18581D3B5DFF009D7482 /* MBHudDemoAppDelegate.m */,
+				D27F18571D3B5DFF009D7482 /* MBHudDemoViewController.h */,
 				D27F18591D3B5DFF009D7482 /* MBHudDemoViewController.m */,
+				B12CE41A1D9228A700DF2B8A /* UIImageView+MBCustomView.h */,
+				B12CE41B1D9228A700DF2B8A /* UIImageView+MBCustomView.m */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 			);
@@ -357,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D27F185B1D3B5DFF009D7482 /* MBHudDemoViewController.m in Sources */,
+				B12CE41C1D9228A700DF2B8A /* UIImageView+MBCustomView.m in Sources */,
 				D22F7D810F85241C00550BB3 /* MBProgressHUD.m in Sources */,
 				D27F185E1D3B5E0D009D7482 /* main.m in Sources */,
 				D27F185A1D3B5DFF009D7482 /* MBHudDemoAppDelegate.m in Sources */,

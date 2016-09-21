@@ -5,6 +5,7 @@
 //
 
 #import "MBProgressHUD.h"
+#import "UIImageView+MBCustomView.h"
 #import <tgmath.h>
 
 
@@ -57,6 +58,41 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 @implementation MBProgressHUD
 
 #pragma mark - Class methods
+
++ (instancetype)showCustomHUDAddedTo:(UIView *)view animated:(BOOL)animated
+{
+    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:animated];
+    UIColor *color = [UIColor colorWithWhite:0.0 alpha:0.5];;
+    hud.bezelView.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.5];
+    hud.bezelView.layer.cornerRadius = 15.0;
+    hud.bezelView.layer.borderColor = color.CGColor;
+    hud.bezelView.layer.backgroundColor = color.CGColor;
+    hud.layer.masksToBounds = YES;
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"loadingBg"]];
+    
+    UIImageView *blackImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_black"]];
+    blackImage.center = imageView.center;
+    [blackImage rotate360WithSelfz];
+    [imageView addSubview:blackImage];
+    
+    UIImageView *redImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"icon_red"]];
+    redImage.center = imageView.center;
+    [redImage rotate360WithSelfx];
+    [imageView addSubview:redImage];
+    
+    UILabel *tipLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 35, imageView.frame.size.width, 20)];
+    tipLabel.text = @"加载中...";
+    tipLabel.font = [UIFont systemFontOfSize:8.0];
+    tipLabel.textColor = [UIColor whiteColor];
+    tipLabel.textAlignment = NSTextAlignmentCenter;
+    [imageView addSubview:tipLabel];
+    
+    // Set the custom view mode to show any view.
+    hud.mode = MBProgressHUDModeCustomView;
+    // Set an image view with a checkmark.
+    hud.customView = imageView;
+    return hud;
+}
 
 + (instancetype)showHUDAddedTo:(UIView *)view animated:(BOOL)animated {
     MBProgressHUD *hud = [[self alloc] initWithView:view];

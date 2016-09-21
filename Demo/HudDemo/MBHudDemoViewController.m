@@ -9,6 +9,7 @@
 #import "MBHudDemoViewController.h"
 #import "MBProgressHUD.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImageView+MBCustomView.h"
 
 @interface MBExample : NSObject
 
@@ -202,18 +203,7 @@
 }
 
 - (void)customViewExample {
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
-
-    // Set the custom view mode to show any view.
-    hud.mode = MBProgressHUDModeCustomView;
-    // Set an image view with a checkmark.
-    UIImage *image = [[UIImage imageNamed:@"Checkmark"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    hud.customView = [[UIImageView alloc] initWithImage:image];
-    // Looks a bit nicer if we make it square.
-    hud.square = YES;
-    // Optional label text.
-    hud.label.text = NSLocalizedString(@"Done", @"HUD done title");
-
+    MBProgressHUD *hud = [MBProgressHUD showCustomHUDAddedTo:self.navigationController.view animated:YES];
     [hud hideAnimated:YES afterDelay:3.f];
 }
 
